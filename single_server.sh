@@ -113,7 +113,7 @@ do
 
     java=`echo ${line} | tr -s " " | cut -d " " -f 8`
 
-    if [ "${java}" = "${JAVA}" ]
+    if [ "${java}" = "${JAVA}" ] || [ "${java}" = "java" ]
     then
         echo ${line}
         echo ${service} server is still running. Shutting down.
