@@ -6,7 +6,9 @@ ensure_process () {
     sleep 2
     line=`ps -ef | grep target/$1 | grep -v grep`
     java=`echo ${line} | tr -s " " | cut -d " " -f 8`
-    if [ "${java}" = "${JAVA}" ]
+
+    # ps may show the simple name (ubuntu) or the complete path to the executable (Mac)
+    if [ "${java}" = "${JAVA}" ] || [  "${java}" = "java" ]
     then
         echo $line
         echo $1 up and running.
