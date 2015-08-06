@@ -21,10 +21,12 @@ ensure_process () {
 # dont build
 build=no
 
+# build only component
+component=all
 
 shutdown=no
 
-while getopts b:r:s: opt; do
+while getopts b:c:s: opt; do
   case ${opt} in
   b)
       build=$OPTARG
@@ -75,27 +77,29 @@ else
 
 
         echo
-        echo     Now building all server components
+        echo     Now building ${component} server components
         echo
         for directory in Kobayashi Relay TeamServer competitions configserver simulator
         do
-            echo ${directory} exists, going to build the executable.
-            if [ "${directory}" = "simulator" ]
+	    if [ "${component}" = "${directory}" ] || [ "${component}" = "all" ]
             then
-                echo running bower explicitly. Somehow, maven does not realize the necessity
-                cd ${WORKSPACE}/simulator/src/main/resources/public/
-                bower install
+		echo ${directory} exists, going to build the executable.
+		if [ "${directory}" = "simulator" ]
+		then
+		    echo running bower explicitly. Somehow, maven does not realize the necessity
+		    cd ${WORKSPACE}/simulator/src/main/resources/public/
+		    bower install
+		elif [ "${directory}" = "competitions" ]
+		then
+		    echo running bower explicitly. Somehow, maven does not realize the necessity
+		    cd ${WORKSPACE}/competitions
+		    bower install
+		    cp -rf bower_components/ src/main/webapp/bower_components
+		fi
 
-            elif [ "${directory}" = "competitions" ]
-            then
-                echo running bower explicitly. Somehow, maven does not realize the necessity
-                cd ${WORKSPACE}/competitions
-                bower install
-                cp -rf bower_components/ src/main/webapp/bower_components
-            fi
-
-            cd ${WORKSPACE}/${directory}
-            mvn clean package
+            	cd ${WORKSPACE}/${directory}
+	        mvn clean package
+	    fi
         done
     fi
 fi
