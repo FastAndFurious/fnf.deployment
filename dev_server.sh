@@ -5,7 +5,7 @@
 
 build=all
 stop=all
-start=all
+run=all
 scriptDir=$PWD
 
 cd ${WORKSPACE}
