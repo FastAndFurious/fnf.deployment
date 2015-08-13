@@ -1,5 +1,15 @@
 #!/usr/bin/env bash
 
+check_has_changes() {
+	currentDir=$PWD
+	cd $1
+	if ! git status | grep -q "nothing to commit, working directory clean";
+	then
+		echo "$1 has changes on active branch"
+	fi
+	cd $currentDir
+}
+
 check_process_started() {
   sleep 2
   line=`ps -ef | grep target/$1 | grep -v grep`
