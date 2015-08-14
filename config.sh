@@ -2,6 +2,14 @@
 ## Java
 JAVA=`which java`
 
+## Client-API
+CLIENTAPI_MODULE=carrera.clientapi
+CLIENTAPI_FOLDER=client-commons-api
+
+## Simulator Lib
+SIMULIB_MODULE=carrera.simulib
+SIMULIB_FOLDER=simulib
+
 ## Kobayashi
 KOBAYASHI_MODULE=carrera.kobayashi
 KOBAYASHI_FOLDER=Kobayashi

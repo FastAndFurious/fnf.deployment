@@ -5,6 +5,16 @@
 
 check_has_changes $PWD
 
+if [ -d ../${CLIENTAPI_FOLDER} ]
+then
+	check_has_changes ../${CLIENTAPI_FOLDER}
+fi
+
+if [ -d ../${SIMULIB_FOLDER} ]
+then
+	check_has_changes ../${SIMULIB_FOLDER}
+fi
+
 if [ -d ../${KOBAYASHI_FOLDER} ]
 then
 	check_has_changes ../${KOBAYASHI_FOLDER}
