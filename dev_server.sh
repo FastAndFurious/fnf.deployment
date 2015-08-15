@@ -36,7 +36,7 @@ then
 fi
 if is_in_list_or_all $build $TEAMSERVER_FOLDER;
 then
-	run_script steamserver.sh yes no no $scriptDir
+	run_script teamserver.sh yes no no $scriptDir
 fi
 if is_in_list_or_all $build $COMPETITIONS_FOLDER;
 then
