@@ -3,11 +3,11 @@
 JAVA=`which java`
 
 ## Client-API
-CLIENTAPI_MODULE=carrera.clientapi
+CLIENTAPI_MODULE=fnf.clientapi
 CLIENTAPI_FOLDER=client-commons-api
 
 ## Simulator Lib
-SIMULIB_MODULE=carrera.simulib
+SIMULIB_MODULE=fnf.simulib
 SIMULIB_FOLDER=simulib
 
 ## Kobayashi
@@ -16,7 +16,7 @@ KOBAYASHI_FOLDER=Kobayashi
 
 ## Relay server
 RELAY_PORT=8090
-RELAY_MODULE=relay
+RELAY_MODULE=fnf.relay
 RELAY_FOLDER=Relay
 
 ## Team server
@@ -39,5 +39,5 @@ CONFIG_FOLDER=configuration
 
 ## Simulator server
 SIMULATOR_PORT=8083
-SIMULATOR_MODULE=carrera.simulator
+SIMULATOR_MODULE=fnf.simulator
 SIMULATOR_FOLDER=simulator
