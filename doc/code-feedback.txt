@@ -1,0 +1,14 @@
+-> Weniger dependencies pro klasse; lieber in kleinere konzepte aufteilen (bsp. relay connection)
+-> SRP
+-> Package naming und welche klassen sind darin
+-> Manchmal etwas overengineered, e.g. die ganze stomp socket, client, listener, ...
+	-> die verschachtelten listener sind echt schwer verständlich
+	-> die listener architektur mit anonymous klasse die dann ein feld auf null setzt ist ungeschickt wenn man eine 
+	   erweiterung machen will, da man je nach technology so einen mechanismus gar nicht hat
+-> Reuse am falschen ort, bzw. nicht auseinander gezogen; so hat man dinge an stellen an denen sie nicht sein sollten
+-> autoformat einschalten
+-> rabbitmq beide seiten (e.g. pilot und relay) als client auftreten und nicht einer als server wie bei websocket
+	-> ursprüngliche impl mit ws "kollidiert" etwas mit rabbit
+-> bessere trennung akka <-> other stuff
+-> timestamp in logs
+-> naming (upper Project folder, maven dann klein, class naming, variable naming)
