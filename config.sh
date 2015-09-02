@@ -11,7 +11,7 @@ SIMULIB_MODULE=fnf.simulib
 SIMULIB_FOLDER=simulib
 
 ## Kobayashi
-KOBAYASHI_MODULE=carrera.kobayashi
+KOBAYASHI_MODULE=fnf.kobayashi
 KOBAYASHI_FOLDER=Kobayashi
 
 ## Relay server
