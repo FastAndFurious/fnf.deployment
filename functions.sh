@@ -51,12 +51,18 @@ checkout_module() {
 
 build_module() {
 	echo $1 exists, going to build the executable.
-	if [ "$1" = "simulator" ]
+	if [ "$1" = "$SIMULATOR_FOLDER" ]
 	then
 	  echo running bower explicitly. Somehow, maven does not realize the necessity
-	  cd ${WORKSPACE}/simulator/src/main/resources/public/
+	  public="${SIMULATOR_FOLDER}/src/main/resources/public"
+	  if ! [ -d "$public" ]
+	  then
+	  	mkdir $public
+	  	echo created $public
+	  fi
+	  cd ${WORKSPACE}/${SIMULATOR_FOLDER}/src/main/resources/public/
 	  bower install
-	elif [ "$1" = "competitions" ]
+	elif [ "$1" = "$COMPETITIONS_FOLDER" ]
 	then
 		  echo running bower explicitly. Somehow, maven does not realize the necessity
 		  cd ${WORKSPACE}/competitions
@@ -88,7 +94,7 @@ is_in_list_or_all() {
 			return 0
 		else
 			return 1
-		fi		
+		fi
 	fi
 }
 
