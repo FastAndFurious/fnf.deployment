@@ -1,6 +1,12 @@
+#!/usr/bin/env bash
+
 # Default settings
 ## Java
 JAVA=`which java`
+
+[ -d "$WORKSPACE" ] || { echo workspace "$WORKSPACE" does not exist; exit -1; }
+
+[ -d "$WORKSPACE/logs" ] || mkdir "$WORKSPACE/logs"
 
 ## Client-API
 CLIENTAPI_MODULE=fnf.clientapi
