@@ -51,6 +51,11 @@ then
 	run_script simulatorserver.sh yes no no $scriptDir
 fi
 
+if is_in_list_or_all $build $ANALYTICS_FOLDER;
+then
+	run_script analytics.sh yes no no $scriptDir
+fi
+
 # Stop Services
 if is_in_list_or_all $stop $KOBAYASHI_FOLDER;
 then
@@ -75,6 +80,10 @@ fi
 if is_in_list_or_all $stop $SIMULATOR_FOLDER;
 then
 	run_script simulatorserver.sh no yes no $scriptDir
+fi
+if is_in_list_or_all $stop $ANALYTICS_FOLDER;
+then
+	run_script analytics.sh no yes no $scriptDir
 fi
 sleep 4
 
@@ -102,4 +111,8 @@ fi
 if is_in_list_or_all $run $COMPETITIONS_FOLDER;
 then
 	run_script competitionsserver.sh no no yes $scriptDir
+fi
+if is_in_list_or_all $run $ANALYTICS_FOLDER;
+then
+	run_script analytics.sh no no yes $scriptDir
 fi

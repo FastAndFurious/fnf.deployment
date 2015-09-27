@@ -20,11 +20,6 @@ SIMULIB_FOLDER=fnf.simulib
 KOBAYASHI_MODULE=fnf.kobayashi
 KOBAYASHI_FOLDER=fnf.kobayashi
 
-## Relay server
-RELAY_PORT=8090
-RELAY_MODULE=fnf.relay
-RELAY_FOLDER=fnf.relay
-
 ## Team server
 TEAMSERVER_PORT=8081
 TEAMSERVER_MODULE=teamserver
@@ -35,6 +30,22 @@ COMPETITIONS_PORT=8082
 COMPETITIONS_MODULE=competition
 COMPETITIONS_FOLDER=competitions
 
+
+## Simulator server
+SIMULATOR_PORT=8083
+SIMULATOR_MODULE=fnf.simulator
+SIMULATOR_FOLDER=fnf.simulator
+
+## Analytics server
+ANALYTICS_PORT=8084
+ANALYTICS_MODULE=fnf.analytics
+ANALYTICS_FOLDER=fnf.analytics
+
+## Relay server
+RELAY_PORT=8090
+RELAY_MODULE=fnf.relay
+RELAY_FOLDER=fnf.relay
+
 ## Config server
 CONFIGSERVER_PORT=8888
 CONFIGSERVER_MODULE=configserver
@@ -42,8 +53,3 @@ CONFIGSERVER_FOLDER=configserver
 
 ## Configuration
 CONFIG_FOLDER=configuration
-
-## Simulator server
-SIMULATOR_PORT=8083
-SIMULATOR_MODULE=fnf.simulator
-SIMULATOR_FOLDER=fnf.simulator
