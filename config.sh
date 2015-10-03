@@ -8,6 +8,10 @@ JAVA=`which java`
 
 [ -d "$WORKSPACE/logs" ] || mkdir "$WORKSPACE/logs"
 
+[ "$FNF_SERVER" == "" ] && { echo "FNF_SERVER (hostname) not set"; exit -1; }
+
+[ "$MYSQL_HOST" == "" ] && { echo MYSQL_HOST not set; exit -1; }
+
 ## Client-API
 CLIENTAPI_MODULE=fnf.clientapi
 CLIENTAPI_FOLDER=fnf.clientapi
