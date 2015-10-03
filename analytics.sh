@@ -61,6 +61,8 @@ then
   echo "starting ANALYTICS server"
   cd ${WORKSPACE}/${ANALYTICS_FOLDER}
   nohup java -jar target/${ANALYTICS_MODULE}-0.0.1-SNAPSHOT.war --spring.profiles.active=dev \
-        --server.port=${ANALYTICS_PORT} > ${WORKSPACE}/logs/analytics.log 2>&1 &
+        --server.port=${ANALYTICS_PORT} \
+        --spring.datasource.url=jdbc:mysql://${MYSQL_HOST}:3306/analytics \
+		> ${WORKSPACE}/logs/analytics.log 2>&1 &
   check_process_started ${ANALYTICS_MODULE}
 fi

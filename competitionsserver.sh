@@ -62,6 +62,8 @@ then
   cd ${WORKSPACE}/${COMPETITIONS_FOLDER}
 	nohup java -jar target/${COMPETITIONS_MODULE}-0.0.1-SNAPSHOT.war \
         --competitions.relayUrl=http://localhost:${RELAY_PORT}/ws/rest/raceTracks/ \
-        --server.port=${COMPETITIONS_PORT} > ${WORKSPACE}/logs/competitions.log 2>&1 &
+        --server.port=${COMPETITIONS_PORT} \
+        --spring.datasource.url=jdbc:mysql://${MYSQL_HOST}:3306/competition \
+		> ${WORKSPACE}/logs/competitions.log 2>&1 &
   check_process_started ${COMPETITIONS_MODULE}
 fi
