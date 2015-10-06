@@ -21,7 +21,7 @@ check_process_started() {
     echo $1 up and running.
   else
     echo failed to start $1
-    exit -1
+    exit 1
   fi
 }
 
