@@ -1,0 +1,27 @@
+#!/bin/bash
+all="fnf.clientapi fnf.simulib fnf.simulator fnf.kobayashi fnf.console fnf.relay fnf.deployment fnf.embedded fnf.analytics TeamServer competitions configuration configserver AkkaStarterKit"
+
+if [ "$WORKSPACE" = "" ]
+then
+   echo workspace not set.
+   exit -1
+fi
+
+
+for i in $all
+do
+
+   if [ "$1" = "clone" ]
+   then
+      echo cloning $i
+      git clone https://github.com/FastAndFurious/$i
+
+   elif [ "$1" = "status" ]
+   then
+      echo
+      echo $i
+      cd $WORKSPACE/$i
+      git status
+      cd - > /dev/null
+   fi
+done
