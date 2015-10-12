@@ -23,5 +23,12 @@ do
       cd $WORKSPACE/$i
       git status
       cd - > /dev/null
+   elif [ "$1" = "pull" ]
+   then
+       echo
+       echo $i
+       cd $WORKSPACE/$i
+       git pull
+       cd - > /dev/null
    fi
 done
