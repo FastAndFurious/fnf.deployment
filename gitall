@@ -1,5 +1,5 @@
 #!/bin/bash
-all="fnf.clientapi fnf.simulib fnf.simulator fnf.kobayashi fnf.console fnf.relay fnf.deployment fnf.embedded fnf.analytics TeamServer competitions configuration configserver AkkaStarterKit"
+all="fnf.clientapi fnf.simulib fnf.simulator fnf.kobayashi fnf.console fnf.relay fnf.deployment fnf.embedded fnf.analytics TeamServer competitions configuration configserver AkkaStarterKit Documentation"
 
 if [ "$WORKSPACE" = "" ]
 then
