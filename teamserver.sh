@@ -61,7 +61,7 @@ then
   echo "starting team server"
   cd ${WORKSPACE}/${TEAMSERVER_FOLDER}
   nohup java -jar target/${TEAMSERVER_MODULE}-0.0.1-SNAPSHOT.war \
-        --links.competitionserver=http://localhost:${COMPETITIONS_PORT} \
+        --links.competitionserver=http://${FNF_SERVER}:${COMPETITIONS_PORT} \
         --server.port=${TEAMSERVER_PORT} \
         --spring.datasource.url=jdbc:mysql://${MYSQL_HOST}:3306/teamserver \
         > ${WORKSPACE}/logs/teamserver.log 2>&1 &
